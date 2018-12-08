@@ -4,8 +4,7 @@ public class Zad2_Digitron {
 
     public static void main(String[] args) {
 
-        boolean opet;
-        opet=true;
+        boolean opet=true;
 
         System.out.println("Dobrodosli u Digitron.");
 
@@ -27,22 +26,28 @@ public class Zad2_Digitron {
             if (odgovor1.equals("s")) {
                 int sab=izabran1+izabran2;
                 System.out.println("Izabrali ste sabiranje. Rezultat je:" + sab);
-            };
+            }
 
             if (odgovor1.equals("o")) {
                 int odu=izabran1-izabran2;
                 System.out.println("Izabrali ste oduzimanje. Rezultat je:" + odu);
-            };
+            }
 
             if (odgovor1.equals("m")) {
                 int mno=izabran1*izabran2;
-                System.out.println("Izabrali ste sabiranje. Rezultat je:" + mno);
-            };
+                System.out.println("Izabrali ste mnozenje. Rezultat je:" + mno);
+            }
 
             if (odgovor1.equals("d")) {
-                int del=izabran1/izabran2;
-                System.out.println("Izabrali ste sabiranje. Rezultat je:" + del);
-            };
+
+                if (izabran2==0){
+                    System.out.println("Delenje nulom nije moguce");
+                }
+                else {
+                    double del = (double) izabran1 / izabran2;
+                    System.out.println("Izabrali ste deljenje. Rezultat je:" + del);
+                }
+            }
 
             System.out.println("\n" + "Da li zelite opet da racunate (d/n):");
             Scanner ulaz3 = new Scanner(System.in);
@@ -51,7 +56,11 @@ public class Zad2_Digitron {
             if (!odgovor2.equals("d")) {
                 System.out.println("\n" + "Hvala sto ste koristili Digitron.");
                 opet=false;
-            };
+
+                ulaz1.close();
+                ulaz2.close();
+                ulaz3.close();
+            }
 
         }
 

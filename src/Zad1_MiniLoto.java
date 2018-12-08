@@ -4,8 +4,7 @@ import java.util.Scanner;
 public class Zad1_MiniLoto {
 
     public static void main(String[] args) {
-        boolean opet;
-        opet=true;
+        boolean opet=true;
 
         System.out.println("Dobrodosli u Mini Loto.");
 
@@ -41,14 +40,14 @@ public class Zad1_MiniLoto {
             if (!odgovor.equals("d")) {
                 System.out.println("\n" + "Hvala sto ste igrali.");
                 opet=false;
-            };
-
+                ulaz1.close();
+                ulaz2.close();
+            }
         }
-
         System.exit(0);
     }
 
-    public static int generateRandomIntIntRange(int min, int max) {
+    private static int generateRandomIntIntRange(int min, int max) {
         Random r = new Random();
         return r.nextInt((max - min) + 1) + min;
     }
